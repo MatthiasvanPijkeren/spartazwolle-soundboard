@@ -24,7 +24,10 @@
     >
         {{ collection:sounds taxonomy:sound_categories="{{slug}}" }}
         <button
-            @click="soundPlayer.playSound('{{ sound }}'); currentSound = '{{ sound }}'; isPlaying = !isPlaying"
+            @click="soundPlayer.toggleSound('{{ sound }}', (playing) => { 
+            currentSound = '{{ sound }}'; 
+            isPlaying = playing; 
+        })"
             :class="{ 'bg-green-500': currentSound === '{{ sound }}' && isPlaying }"
             class="tab-button w-full bg-blue-500 text-white text-xs aspect-square rounded-lg shadow-lg flex justify-center items-center transition-all"
         >
