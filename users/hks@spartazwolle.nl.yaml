@@ -2,3 +2,35 @@ name: 'Harde Kern'
 super: true
 id: 09d67af9-db27-492b-aa75-491e2935e0da
 password_hash: $2y$12$AfhgAF05YI32wUXUXTcFM.0ERiskMfNTR2PGkiW8ZiJEFdbe43U0i
+preferences:
+  collections:
+    sounds:
+      columns:
+        - title
+        - sound_categories
+        - status
+      filters:
+        oplopen:
+          display: Oplopen
+          filters:
+            fields:
+              sound_categories:
+                term: oplopen
+        goaltunes:
+          display: Goaltunes
+          filters:
+            fields:
+              sound_categories:
+                term: goaltunes
+        time_outs:
+          display: Time-outs
+          filters:
+            fields:
+              sound_categories:
+                term: time-outs
+        einde:
+          display: Einde
+          filters:
+            fields:
+              sound_categories:
+                term: einde

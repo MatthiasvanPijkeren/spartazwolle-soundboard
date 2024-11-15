@@ -20,14 +20,17 @@ return [
         | collections, taxonomies, and globals.
         |
         */
-        'collections.articles' => [
-            // 'article' => App\Blueprints\ArticleBlueprint::class,
+        'collections.pages' => [
+            'soundboard' => App\Blueprints\Pages\SoundboardPageBlueprint::class,
         ],
-        'taxonomies.tags' => [
-            // 'tag' => App\Blueprints\TagBlueprint::class,
+        'collections.sounds' => [
+            'sound' => App\Blueprints\Sounds\SoundBlueprint::class,
+        ],
+        'taxonomies.sound_categories' => [
+            'sound_category' => App\Blueprints\Taxonomies\SoundCategoryBlueprint::class,
         ],
         'globals' => [
-            // 'footer' => App\Blueprints\SiteBlueprint::class,
+            // 'footer' => App\Blueprints\Globals\FooterBlueprint::class,
         ],
         'navigation' => [
             // 'main' => App\Blueprints\MainNavigationBlueprint::class,
@@ -61,7 +64,8 @@ return [
     |
     */
     'collections' => [
-        // App\Collections\Articles::class,
+        App\Collections\Pages::class,
+        App\Collections\Sounds::class,
     ],
 
     /*
@@ -74,7 +78,7 @@ return [
     |
     */
     'taxonomies' => [
-        // App\Taxonomies\Tags::class,
+        // App\Taxonomies\SoundCategory::class,
     ],
 
     /*
