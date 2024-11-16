@@ -3,6 +3,7 @@
 namespace App\Blueprints\Taxonomies;
 
 use Tdwesten\StatamicBuilder\Blueprint;
+use Tdwesten\StatamicBuilder\FieldTypes\Integer;
 use Tdwesten\StatamicBuilder\FieldTypes\Section;
 use Tdwesten\StatamicBuilder\FieldTypes\Tab;
 use Tdwesten\StatamicBuilder\FieldTypes\Text;
@@ -38,6 +39,12 @@ class SoundCategoryBlueprint extends Blueprint
                     Text::make('title')
                         ->displayName('Title')
                         ->required(),
+                ]),
+            ]),
+            Tab::make('sidebar', [
+                Section::make('General', [
+                    Integer::make('sort_key')
+                        ->displayName('Sort key'),
                 ]),
             ]),
         ];

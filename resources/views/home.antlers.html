@@ -1,14 +1,14 @@
 <div
     class="w-full flex flex-col"
-    x-data="{ activeTab: null, currentSound: null, isPlaying: false }"
+    x-data="{ activeTab: 'goaltunes', currentSound: null, isPlaying: false }"
 >
     <!-- Tab Buttons -->
-    <div class="flex flex-row space-x-2">
-        {{ taxonomy from="sound_categories" }}
+    <div class="flex flex-row">
+        {{ taxonomy from="sound_categories" sort="sort_key" }}
         <button
             @click="activeTab = '{{ slug }}'"
-            :class="{ 'bg-blue-500 text-white': activeTab === '{{ slug }}', 'bg-gray-100 text-black': activeTab !== '{{ slug }}' }"
-            class="tab-button w-full p-2 flex items-center justify-center border border-gray-300 rounded-md transition"
+            :class="{ 'bg-hks-dark text-white': activeTab === '{{ slug }}', 'bg-gray-100 text-black': activeTab !== '{{ slug }}' }"
+            class="tab-button w-full p-2 flex items-center justify-center border border-gray-300 transition"
         >
             {{title}}
         </button>
@@ -16,7 +16,7 @@
     </div>
 
     <!-- Sound Buttons -->
-    {{ taxonomy from="sound_categories" }}
+    {{ taxonomy from="sound_categories" sort="sort_key" }}
     <div
         x-show="activeTab === '{{ slug }}'"
         x-cloak
@@ -28,8 +28,8 @@
             currentSound = '{{ sound }}'; 
             isPlaying = playing; 
         })"
-            :class="{ 'bg-green-500': currentSound === '{{ sound }}' && isPlaying }"
-            class="tab-button w-full bg-blue-500 text-white text-xs aspect-square rounded-lg shadow-lg flex justify-center items-center transition-all"
+            :class="{ 'scale-95 opacity-75': currentSound === '{{ sound }}' && isPlaying }"
+            class="tab-button w-full bg-hks-dark text-white text-xs aspect-square rounded-lg shadow-lg flex justify-center items-center transition-all"
         >
             {{ title }}
         </button>

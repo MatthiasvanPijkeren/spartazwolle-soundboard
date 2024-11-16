@@ -19,7 +19,9 @@
             src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
         ></script>
     </head>
-    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
-        {{ template_content }}
+    <body
+        class="bg-gray-100 flex flex-col font-sans leading-normal text-gray-800 w-full overflow-hidden"
+    >
+        {{ partial:header }} {{ template_content }}
     </body>
 </html>

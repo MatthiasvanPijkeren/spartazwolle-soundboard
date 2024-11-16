@@ -30,7 +30,7 @@ return [
             'sound_category' => App\Blueprints\Taxonomies\SoundCategoryBlueprint::class,
         ],
         'globals' => [
-            // 'footer' => App\Blueprints\Globals\FooterBlueprint::class,
+            'header' => App\Blueprints\Globals\HeaderBlueprint::class,
         ],
         'navigation' => [
             // 'main' => App\Blueprints\MainNavigationBlueprint::class,
@@ -91,7 +91,7 @@ return [
     |
     */
     'globals' => [
-        // App\Globals\Footer::class,
+        // App\Globals\Header::class,
     ],
 
     /*
