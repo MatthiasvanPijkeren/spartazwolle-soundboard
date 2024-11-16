@@ -34,3 +34,18 @@ preferences:
             fields:
               sound_categories:
                 term: einde
+  nav:
+    reorder:
+      - content
+    sections:
+      content: '@hide'
+      soundboard:
+        action: '@create'
+        display: Soundboard
+        items:
+          'content::collections::sounds': '@move'
+          'content::assets::sounds': '@move'
+          'content::taxonomies::sound_categorieen': '@move'
+      fields: '@hide'
+      tools: '@hide'
+      settings: '@hide'
